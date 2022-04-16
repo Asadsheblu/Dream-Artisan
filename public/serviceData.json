@@ -1,0 +1,29 @@
+
+
+
+[
+    {
+            "id": 1,
+            "name": "Wedding Photoshoot",
+           
+            "price": 19.99,
+            "category": "Wedding",
+            "img": "https://i.ibb.co/qNkF0ZW/bride-6704264-640-1.jpg"
+    },
+    {
+            "id": 2,
+            "name": "product Photoshoot",
+            
+            "price": 9.99,
+            "category": "Product",
+            "img":" https://i.ibb.co/tY5VKB3/perfume-3640056-640-1.jpg"
+    },
+    {
+            "id": 3,
+            "name": "Model Photoshoot",
+            
+            "price": 10.99,
+            "category": "Model",
+            "img":" https://i.ibb.co/GQHhwV5/man-1866572-640-1.jpg"
+    }
+]
