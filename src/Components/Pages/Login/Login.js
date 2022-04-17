@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword,useSignInWithGoogle,useSendPasswordResetEmail} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import auth from "../../../firebase_init"
 import google from "../../../images/logo-google/icons8-google.svg"
 const Login = () => {
@@ -17,11 +18,14 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-      console.log(user)
+      
       const [signInWithGoogle] = useSignInWithGoogle(auth);
       const [sendPasswordResetEmail] = useSendPasswordResetEmail(
         auth
       );
+      if(error){
+        toast(error?.message)
+      }
       const navigate=useNavigate()
     const location=useLocation()
     const from=location.state?.from?.pathname || '/';
@@ -40,12 +44,12 @@ const Login = () => {
         e.preventDefault()
         
         signInWithEmailAndPassword(email,password)
-    
+       
        
       }
       const handelResetPassword=async()=>{
         await sendPasswordResetEmail(email)
-        alert("sent Password Your Email")
+        toast("Sent Password Your Email")
       }
     return (
         <div>
@@ -66,9 +70,8 @@ const Login = () => {
     <Form.Control onBlur={handelPassword}  type="password" placeholder="Password" required/>
   </Form.Group>
   
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
+  
+ 
  <h6> Are You new Dream Artisan? <Link className="text-decoration-none fs-4" to="/login">Sign Up</Link></h6> 
  <br />
     <h6>Forgot Your Password?<Button onClick={handelResetPassword} className="fs-6" variant="btn btn-link">Reset</Button></h6>
@@ -77,7 +80,12 @@ const Login = () => {
     Login
   </Button>
   <br />
-  <Button className="mt-3 w-50 p-3" variant="info" onClick={()=>signInWithGoogle()}>Sign In With <img width={20} src={google} alt="" /></Button>
+  <div className='d-flex align-items-center'>
+ <div style={{height:"1px"}} className="bg-primary w-50"></div>
+  <p className="mt-2 px-2">Or</p>
+  <div style={{height:"1px"}} className="bg-primary w-50"></div>
+ </div>
+  <Button className="mt-3 w-50 p-3 mx-auto" variant="info" onClick={()=>signInWithGoogle()}>Sign In With <img width={20} src={google} alt="" /></Button>
   <ToastContainer />
 </Form>
         </div>

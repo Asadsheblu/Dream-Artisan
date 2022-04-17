@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
 const Checkout = () => {
     const handelCheckout=()=>{
-        alert('Your Order SuccessFul')
+        toast('Thank you for the Booking')
     }
     return (
         <div>
@@ -14,7 +15,7 @@ const Checkout = () => {
            
             <div className="col-md-12 order-md-1">
               <h4 className="mb-3">Billing address</h4>
-              <form className="needs-validation" novalidate>
+              <form className="needs-validation" >
                 <div className="row">
                   <div className="col-md-6 mb-3">
                     <label for="firstName">First name</label>
@@ -155,7 +156,7 @@ const Checkout = () => {
           </div>
           
         </div>
-     
+     <ToastContainer />
       </div>
         </div>
     );
