@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import auth from "../../../firebase_init"
-import google from "../../../images/logo-google"
+import google from "../../../images/logo-google/icons8-google.svg"
 const Signup = () => {
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
