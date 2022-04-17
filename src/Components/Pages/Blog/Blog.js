@@ -40,6 +40,39 @@ const Blog = () => {
                    
                 </div>
             </div>
+            <div className="row">
+                <h6>What other services does firebase provide other than authentication?</h6>
+                <h5>Ans:</h5>
+                <div className="col-md-6">
+                    <img className="img-fluid" src={firebaseImg} alt="" />
+                </div>
+                <div className="col-md-6 pt-5">
+                    <ol>
+                    
+                        <li>
+                   Hosting
+                        </li>
+                        <li>
+                   Cloud fireStore
+                        </li>
+                        <li>
+                   Cloud Function
+                        </li>
+                        <li>
+                        Cloud Storage
+                        </li>
+                        <li>
+                        Cloud Messaging
+                        </li>
+                        <li>
+                       Goggle Analyics
+                        </li>
+                        <li>
+                        Predictions..etc.
+                        </li>
+                    </ol>
+                </div>
+            </div>
         </div>
     );
 };
