@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword,useSendEmailVerification } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword,useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Button, Form } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import auth from "../../../firebase_init"
+import google from "../../../images/logo-google"
 const Signup = () => {
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
@@ -15,7 +18,7 @@ const Signup = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
       const [sendEmailVerification, sending] = useSendEmailVerification(auth)
-      
+      const [signInWithGoogle]=useSignInWithGoogle(auth)
       console.log(user)
       const handelEmail=(e)=>{
           setEmail(e.target.value)
@@ -31,7 +34,7 @@ const Signup = () => {
         
        await createUserWithEmailAndPassword(email,password)
        await sendEmailVerification(email,password);
-          alert('Sent Verification email');
+          toast('Sent Verification email');
        
        
        
@@ -68,7 +71,18 @@ const Signup = () => {
   <Button variant="primary" type="submit">
     SignUp
   </Button>
+  
+  <ToastContainer />
+  <div className='d-flex align-items-center'>
+ <div style={{height:"1px"}} className="bg-primary w-50"></div>
+  <p className="mt-2 px-2">Or</p>
+  <div style={{height:"1px"}} className="bg-primary w-50"></div>
+ </div>
+ <Button onClick={()=>signInWithGoogle()} className="w-100 rounded-pill" variant="dark" type="submit">
+    Registration with <img width="20px" className="img-fluid" src={google} alt="" />
+  </Button>
 </Form>
+
         </div>
          </div>
     );
