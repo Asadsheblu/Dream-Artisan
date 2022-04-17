@@ -1,8 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase_init';
 
 const Header = () => {
+ 
+  const [user]=useAuthState(auth)
+  
+  const handelsignOut=()=>{
+    signOut(auth)
+  }
     return (
         <div>
            <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,20 +27,25 @@ const Header = () => {
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" to="/about" href="#">About</a>
+          <Link className="nav-link" to="/about" href="#">About</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" to="/service" href="#">Service</a>
+          <Link className="nav-link" to="/service" href="#">Service</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" to="/contact" href="#">Contact</a>
+          <Link className="nav-link" to="/contact" href="#">Contact</Link>
         </li>
         </ul>
      <button className="btn btn-danger pe-3 me-5"><Link className='text-decoration-none text-white' to="/register">Register</Link></button>
-
-
-
+{
+  user?
+<button onClick={handelsignOut} className="btn btn-warning">SignOut</button>
+:
 <button className="btn btn-warning"><Link className='text-decoration-none text-white' to="/login">Login</Link></button>
+}
+
+
+
   
            
               

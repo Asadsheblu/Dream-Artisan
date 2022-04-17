@@ -1,9 +1,11 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = ({service}) => {
-    const {name,img,category,price}=service
+    const {name,img,category,price,description}=service
+    
     return (
         
              <div className="col">
@@ -11,9 +13,11 @@ const Service = ({service}) => {
       <img src={img} className="card-img-top img-fluid h-50" alt="..." />
       <div className="card-body">
         <h5 className="card-title">Name:{name}</h5>
+        
+        <h6>Category:{category}</h6>
+        <p>{description}</p>
         <h6>Price:{price}$</h6>
-        <p>Category:{category}</p>
-        <button className='btn btn-warning'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> Add To Cart</button>
+        <button className='btn btn-warning'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> <Link className="text-decoration-none text-white" to="/checkout">Add To Cart</Link> </button>
       </div>
     </div>
   </div>

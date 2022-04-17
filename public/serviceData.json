@@ -6,24 +6,24 @@
 [
     {
             "id": 1,
-            "name": "Wedding Photoshoot",
-           
+            "name": "Wedding Photography",
+           "description":"Wedding photography is the photography of activities relating to weddings. It encompasses photographs of the couple before marriage as well as coverage of the wedding and reception. It is a major commercial endeavor that supports the bulk of the efforts for many photography studios or independent photographers. ",
             "price": 19.99,
             "category": "Wedding",
             "img": "https://i.ibb.co/wz85KQS/woman-6063087-640-1.jpg"
     },
     {
             "id": 2,
-            "name": "product Photoshoot",
-            
+            "name": "Product Potography",
+            "description":"Product photography is any image of a good for sale. Also known as commercial photography, these images are meant to entice shoppers to purchase the photographed products.As an umbrella term, product photography can also include renderings or renders, which are 3D graphics that look life-like and can almost pass as a real photo. ",
             "price": 9.99,
             "category": "Product",
             "img":" https://i.ibb.co/nCTgQrW/perfume-3640056-640-1-1.jpg"
     },
     {
             "id": 3,
-            "name": "Model Photoshoot",
-            
+            "name": "Model Photography",
+            "description":"A model photography shoot can also refer to a common practice where a photographer is taking photographs of a model for the model's portfolio. This usually means that a model pays a photographer to take his or her head and body shots, or by which an agency organizes the model photography shoot on behalf of the model.",
             "price": 10.99,
             "category": "Model",
             "img":" https://i.ibb.co/Kyw2STD/bride-6704264-640-1-1.jpg"

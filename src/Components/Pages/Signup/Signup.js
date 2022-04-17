@@ -1,32 +1,65 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useCreateUserWithEmailAndPassword,useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import auth from "../../../firebase_init"
 const Signup = () => {
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
+    const [confrimPassword,setconfrimPassword]=useState('')
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      const [sendEmailVerification, sending] = useSendEmailVerification(auth)
+      
+      console.log(user)
+      const handelEmail=(e)=>{
+          setEmail(e.target.value)
+      }
+      const handelPassword=(e)=>{
+          setPassword(e.target.value)
+      }
+      const handelConfrimPassword=(e)=>{
+          setconfrimPassword(e.target.value)
+      }
+      const handelSignup=async(e)=>{
+        e.preventDefault()
+        
+       await createUserWithEmailAndPassword(email,password)
+       await sendEmailVerification(email,password);
+          alert('Sent Verification email');
+       
+       
+       
+      }
     return (
         <div className="w-75 mx-auto bg-light shadow p-5 m-5">
             <h4 className="text-center">Please Registration</h4>
             <div className='w-50 mx-auto'>
 
            
-            <Form>
+            <Form onSubmit={handelSignup}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Enter Your Name</Form.Label>
-    <Form.Control type="text" placeholder="Enter Name" />
+    <Form.Control type="text" placeholder="Enter Name" required />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control onBlur={handelEmail} type="email" placeholder="Enter email" required />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+    <Form.Control onBlur={handelPassword}  type="password" placeholder="Password"  required/>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
+  {/* <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Confrim Password</Form.Label>
-    <Form.Control type="password" placeholder="Confrim-Password" />
-  </Form.Group>
+    <Form.Control onClick={handelConfrimPassword}  type="password" placeholder="Confrim-Password" />
+  </Form.Group> */}
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
