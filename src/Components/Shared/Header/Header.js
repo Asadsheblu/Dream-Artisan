@@ -33,7 +33,7 @@ const Header = () => {
           <Link className="nav-link" to="/service" href="#">Service</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/contact" href="#">Contact</Link>
+          <Link className="nav-link" to="/blog" href="#">Blog</Link>
         </li>
         </ul>
      <button className="btn btn-danger pe-3 me-5"><Link className='text-decoration-none text-white' to="/register">Register</Link></button>
