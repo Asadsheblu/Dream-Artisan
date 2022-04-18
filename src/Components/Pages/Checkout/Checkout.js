@@ -16,9 +16,9 @@ const Checkout = () => {
             <div className="maincontainer">
        <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
           
-          <div className="row">
+          <div className="row align-center">
            
-            <div className="col-md-12 order-md-1">
+            <div className="col-md-12  order-md-1">
               <h4 className="mb-3">Billing address</h4>
               <form className="needs-validation" >
                 <div className="row">

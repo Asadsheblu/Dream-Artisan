@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import auth from "../../../firebase_init"
 import google from "../../../images/logo-google/icons8-google.svg"
+import RubberBand from 'react-reveal/RubberBand';
 const Login = () => {
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
@@ -52,8 +53,10 @@ const Login = () => {
         toast("Sent Password Your Email")
       }
     return (
-        <div>
-            <div className="w-75 mx-auto bg-light shadow p-5 m-5">
+        <div className='row container'>
+          
+          <RubberBand>
+          <div className="col-md-12 mx-auto bg-light shadow p-5 m-5">
             <h4 className="text-center">Please SignIn</h4>
             <div className='w-50 mx-auto'>
 
@@ -90,6 +93,8 @@ const Login = () => {
 </Form>
         </div>
          </div>
+        </RubberBand>
+           
         </div>
     );
 };

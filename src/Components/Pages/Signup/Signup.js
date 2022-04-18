@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from "../../../firebase_init"
 import Loading from "../../Shared/Loading/Loading"
 import google from "../../../images/logo-google/icons8-google.svg"
+import Flash from 'react-reveal/Flash';
+
 const Signup = () => {
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
@@ -59,7 +61,11 @@ const navigate=useNavigate()
       }
      
     return (
-        <div className="w-75 mx-auto bg-light shadow p-5 m-5">
+      <div className='row container'>
+        <div className="col-md-12">
+        
+        <Flash>
+        <div className="mx-auto bg-light shadow p-5 m-5">
             <h4 className="text-center">Please Registration</h4>
             <div className='w-50 mx-auto'>
 
@@ -104,7 +110,10 @@ const navigate=useNavigate()
     Registration with <img width="20px" className="img-fluid" src={google} alt="" />
   </Button>
 </Form>
-
+</div>
+</div>
+        </Flash>
+       
         </div>
          </div>
     );

@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase_init';
-
+import './Header.css'
 const Header = () => {
  
   const [user]=useAuthState(auth)
@@ -14,7 +14,7 @@ const Header = () => {
   }
     return (
         <div>
-           <nav className="navbar navbar-expand-lg navbar-light bg-light">
+           <nav className="navbar navbar-expand-lg navbar-light bg-info">
   <div className="container-fluid">
   <Link className="navbar-brand" to="/" href="#">Dream Artisan</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

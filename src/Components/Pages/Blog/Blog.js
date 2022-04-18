@@ -1,16 +1,21 @@
 import React from 'react';
 import authentication from "../../../images/Authentication_vs_Authorization.png"
 import firebaseImg from "../../../images/image00.png"
+import LightSpeed from 'react-reveal/LightSpeed'
+import Bounce from 'react-reveal/Bounce';
 const Blog = () => {
     return (
         <div className='container'>
             <h4>Difference between authorization and authentication</h4>
             <h6>Ans:</h6>
             <div className="row">
-                <div className="col-md-6">
+            <LightSpeed right>
+            <div className="col-md-6">
                     <img className="img-fluid" src={authentication} alt="" />
                 </div>
-                <div className="col-md-6 pt-5">
+        </LightSpeed>
+        <Bounce right>
+        <div className="col-md-6 pt-5">
                     <ol>
                         <li>
                         Authentication is the process Of verifying who Someone.And  Authorazation is the process of verifying what specific data user access.
@@ -23,6 +28,8 @@ const Blog = () => {
                         </li>
                     </ol>
                 </div>
+        </Bounce>
+                
             </div>
           
             <div className="row">
