@@ -1,11 +1,12 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Service.css'
 const Service = ({service}) => {
     const {name,img,category,price,description}=service
     
+
     return (
         
              <div className="col">

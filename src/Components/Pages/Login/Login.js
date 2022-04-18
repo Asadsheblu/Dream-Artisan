@@ -72,7 +72,7 @@ const Login = () => {
   
   
  
- <h6> Are You new Dream Artisan? <Link className="text-decoration-none fs-4" to="/login">Sign Up</Link></h6> 
+ <h6> Are You new Dream Artisan? <Link className="text-decoration-none fs-4" to="/register">Sign Up</Link></h6> 
  <br />
     <h6>Forgot Your Password?<Button onClick={handelResetPassword} className="fs-6" variant="btn btn-link">Reset</Button></h6>
   <Button variant="primary" className="w-50 rounded-pill" type="submit">

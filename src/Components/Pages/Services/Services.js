@@ -8,6 +8,7 @@ const Services = () => {
         .then(res=>res.json())
         .then(data=>setService(data))
     },[])
+    
     return (
         <div className="container-fluid p-5">
             <h1 className='text-center'>Service</h1>
@@ -15,7 +16,7 @@ const Services = () => {
 
             
             {
-                services?.map(service=><Service key={service.id} service={service}></Service>)
+                services?.map(service=><Service key={service.id} service={service} ></Service>)
             }
             </div>
         </div>
